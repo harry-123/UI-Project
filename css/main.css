@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* Custom Variables */
+:root {
+  --leading: 2em;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+.hero-bg {
+  background: #307d99 url("../images/bg.jpg");
+  background-position: 12% 83%;
+  color: white;
+  text-align: center;
+  padding-bottom: 4em;
+}
+
+header {
+  padding: 1em 0;
+}
+
+header a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+section {
+  margin: 0 1em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 2em 0 1.2em;
+}
+
+h1 span {
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+h1 span::before {
+  content: "";
+  position: absolute;
+  width: 3em;
+  height: 0.4em;
+  background-color: #00bfff;
+  bottom: 0;
+  z-index: -1;
+  margin-left: -0.3em;
+}
+
+.hero-bg p {
+  font-weight: bold;
+  margin: 0 1em 3em;
+}
+
+.form-container {
+  background-color: white;
+  margin: 2em -1em 0;
+  padding: 2em;
+}
+
+label {
+  color: #2d7d98;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+}
+
+input[type="text"] {
+  border-radius: 0.5em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #707070;
+  margin-top: 1.2em;
+}
+
+.form-container p {
+  color: gray;
+  font-weight: normal;
+  font-size: 0.8rem;
+  margin-top: 0.5em;
+}
+
+input[type="button"] {
+  background-color: #f89104;
+  border: none;
+  padding: 1em 0;
+  width: 100%;
+  border-radius: 0.5em;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: rgb(212, 150, 34);
+}
+
+.authentic {
+  margin: 0px;
+}
+
+.authentic img {
+  width: 100%;
+}
+
+.right-col {
+  text-align: center;
+  margin: 3em 1em;
+}
+
+h2 {
+  text-transform: uppercase;
+  position: relative;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  width: 8em;
+  height: 0.4em;
+  background-color: #00bfff;
+  bottom: 0;
+  z-index: -1;
+  margin-left: -0.3em;
+}
+
+p {
+  line-height: 2em;
+}
+
+@media (min-width: 730px) {
+  section.top {
+    padding: 0 4em;
+  }
+
+  .form-container {
+    border-radius: 0.5em;
+    padding: 2em;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .right-col {
+    padding: 0 4em;
+    margin: 3em 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-bg {
+    text-align: left;
+    padding-bottom: 7em;
+  }
+
+  .hero-bg section {
+    width: 65%;
+  }
+
+  form {
+    display: flex;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  .form-left {
+    width: 65%;
+  }
+
+  input[type="button"] {
+    height: fit-content;
+    font-size: 1rem;
+    margin-left: 1em;
+    margin-top: 2.4em;
+    padding: 0.8em 0;
+    width: 30%;
+  }
+
+  .hero-bg p {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  section.authentic {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: "bowl content";
+  }
+
+  .right-col {
+    grid-area: content;
+    margin: auto 1em;
+  }
+
+  .authentic img {
+    grid-area: bowl;
+  }
+}
+
+.top {
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2em);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  color: white;
+  font-weight: bold;
+  place-content: center;
+  display: none;
+}
+
+.animate-overlay {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  justify-content: center;
+  pointer-events: none;
+  animation: overlay 3s forwards;
+}
+
+.overlay img {
+  width: 6em;
+  margin: 0 auto;
+}
+
+@keyframes overlay {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
